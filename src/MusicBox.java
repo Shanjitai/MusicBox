@@ -17,12 +17,15 @@ public class MusicBox {
         this.songID = songID;
         this.isSongPremium = premiumSong;
         this.songArtists = artists;
-        
+        this.songTitle = title;
+        this.songAlbum = Album;
+        this.songMusicLabel = label;
+        this.songGenre = genre;
+        this.songProducer = producer;
         // -- TODO
-        /* Initialise  the rest of the variables in this Constructor block*/
+        /* Initialise  the rest of the variables in this Constructor block */
     }
-    
-    
+
     //Methods
     public String getSongID() {
         return songID;
@@ -36,34 +39,53 @@ public class MusicBox {
         return isSongPremium;
     }
 
+    public String getTitle() {
+        return songTitle;
+    }
 
-    // -- TODO
-        /* Create the rest of "getters" for the remaining variables */
-    
-        public void playSong(String songID, char premium, int ads) {
-            switch(premium){
-                case 'Y':
+    public String getGenre() {
+        return songGenre;
+    }
+
+    public String getLabel() {
+        return songMusicLabel;
+    }
+
+    public String getAlbum() {
+        return songAlbum;
+    }
+
+    public String getProducer() {
+        return songProducer;
+    }
+
+    public int getNoAds() {
+        return noAds;
+    }
+
+    public void playSong(String songID, char premium, int ads) {
+        switch (premium) {
+            case 'Y':
                 System.out.println("This is a premium song. Please buy it to play without the ads");
                 playAd(ads, premium);
                 break;
-                case 'N':
+            case 'N':
                 System.out.println("Thank you for choosing this song. Hope you enjoy listening to it.");
                 playAd(ads, premium);
                 break;
-            }
         }
-    
-        private void playAd(int ads, char premium) {
-            if (ads == 1) {
-                System.out.println("Playing Ad 1");
-            }
-            else {
-                for(int i=1; i<=ads; i++){
-                    System.out.println("Playing Ad " + i);
-                }
-            }
-            
-        }
-    
-}
+    }
 
+    private void playAd(int ads, char premium) {
+        if (ads == 1) {
+            System.out.println("Playing Ad 1");
+        } else {
+            for (int i = 1; i <= ads; i++) {
+                System.out.println("Playing Ad " + i);
+            }
+        }
+
+    }
+
+}    
+// Example Usage
